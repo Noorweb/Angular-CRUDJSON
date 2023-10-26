@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Users": [
+    {
+      "Name": "نوره مبشر محمد",
+      "Mobile": 562226613,
+      "Email": "alghnorah17@gmail.com",
+      "Age": 2343,
+      "id": 1
+    },
+    {
+      "Name": "fahad",
+      "Mobile": 423234,
+      "Email": "fahd@sfsf.com",
+      "Age": 345,
+      "id": 2
+    },
+    {
+      "Name": "نوره مبشر محمد",
+      "Mobile": 562226613,
+      "Email": "alghnorah17@gmail.com",
+      "Age": 234234,
+      "id": 3
+    },
+    {
+      "Name": "نوره مبشر محمد",
+      "Mobile": 562226613,
+      "Email": "alghnorah17@gmail.com",
+      "Age": 44,
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

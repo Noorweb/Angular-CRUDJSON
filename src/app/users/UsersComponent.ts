@@ -14,9 +14,20 @@ export class UsersComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     private service: CommonService
-  ) {
+  ){}
+  filterButtons = [
+    { text: 'Posted', isClicked: false },
+    { email: 'FFM', isClicked: false },
+    { number: '9999', isClicked: false },
+  ]
 
 
+  setActive(button: any): void {
+    for(let but of this.filterButtons) {
+      but.isClicked = false;
+    }
+
+    button.isClicked = true;
   }
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -29,7 +40,9 @@ export class UsersComponent implements OnInit {
   }
 
   SubmitForm() {
-    this.service.AddUpdateUser(this.userForm.value).subscribe(data => {
+    console.log("clicked");
+    console.log(this.userForm.value);
+    this.service.AddUpdateUser(this.userForm.value).subscribe((data:any)  => {
       alert("Added");
       this.userForm.reset();
       this.GetAllUsers();
@@ -39,6 +52,7 @@ export class UsersComponent implements OnInit {
 
   GetAllUsers() {
     this.service.GetAllUsers().subscribe((data: any) => {
+      console.log(data);
       if (data)
         this.usersList = data;
     })
@@ -46,7 +60,7 @@ export class UsersComponent implements OnInit {
 
 
   DeleteUserByID(ID: any) {
-    this.service.DeleteUserByID(ID).subscribe(data => {
+    this.service.DeleteUserByID(ID).subscribe((data:any) => {
       if (data)
         this.GetAllUsers();
     })
